@@ -1,1 +1,3 @@
-# guild-finance
+# Guild Template
+
+Starter template for a Citadel Nexus guild.
