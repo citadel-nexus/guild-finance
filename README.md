@@ -82,6 +82,74 @@ crewpay.payment.failed              — Triggers governance hold
 
 ---
 
+## Mission System
+
+Finance missions reward revenue accuracy, predictive modeling, and financial system reliability.
+
+| Mission | Description | XP | Unlock |
+|---------|-------------|-----|--------|
+| First Forecast | Generate a Bedrock AI revenue forecast | 150 | Default |
+| Stripe Wired | Connect and verify a live Stripe webhook | 200 | Default |
+| Dashboard Built | Create a Metabase revenue dashboard | 250 | Analyst rank |
+| Commission Report | Run a full cross-guild commission attribution | 400 | Analyst rank |
+| NL Query Live | Answer a natural language revenue question via Bedrock | 200 | Analyst rank |
+| Churn Alert | Detect and report a churn risk cohort | 300 | Finance rank |
+| Quarterly Audit | Complete a full quarterly financial audit pass | 600 | Treasurer rank |
+
+**Daily missions (reset 00:00 UTC):**
+- Sync a Stripe webhook event — 25 XP
+- Emit a `citadel.finance.forecast.ready` event — 30 XP
+
+Finance guild operates under strict data integrity rules. Bedrock forecasts must use
+real data — simulated figures must be explicitly labeled as such in all outputs.
+
+---
+
+## Guild Expectations
+
+**Members:**
+- No hardcoded financial figures or projections anywhere in code or comments
+- CAPS composite score ≥ 0.70 for Bedrock forecast authority
+- Complete Finance onboarding (Stripe + Bedrock primer) within 7 days of placement
+- Engage in `#revenue-ops` and `#forecast-lab` lobby channels
+
+**Contributors:**
+- All Stripe webhook handlers must be idempotent (safe replay within 72h)
+- Bedrock API calls require a cost estimate comment (tokens × model rate)
+- AWS IAM key usage must go through the key rotation handler — never raw env vars
+- Code review turnaround: 48 hours
+
+**Guild Lead (Chief Financial Officer):**
+- Weekly MRR + ARR update to `#announcements`
+- Review commission attribution reports monthly with Commerce guild
+- Own the Metabase dashboard catalogue and access controls
+
+---
+
+## Contributing
+
+**Branch naming:**
+```
+feat/<srs-code>/<short-description>
+fix/<srs-code>/<short-description>
+finance/<srs-code>/<short-description>
+```
+
+**PR checklist:**
+- [ ] SRS code referenced (e.g., `SRS: FIN-STRIPE-003`)
+- [ ] `npm test` passes — Stripe webhook tests use fixture payloads
+- [ ] Bedrock model calls include `# Estimated cost: $X.XX per invocation` comment
+- [ ] No live Stripe keys in tests — use `sk_test_` fixtures
+- [ ] Commission logic changes reviewed by guild lead
+
+**Commit format:** `<type>(<srs-code>): <description>`
+Example: `feat(FIN-STRIPE-003): add subscription churn webhook handler`
+
+**SAKE compliance:** New financial analysis modules require a `.sake` file stub.
+See [guild-sdk](https://github.com/citadel-nexus/guild-sdk) for the format.
+
+---
+
 ## Getting Started
 
 ```bash
