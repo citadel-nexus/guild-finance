@@ -1,5 +1,5 @@
 {
-  "name": "@citadel-guilds/guild-finance",
+  "name": "@citadel-guilds/finance",
   "version": "0.1.0",
   "type": "module",
   "main": "dist/index.js",
