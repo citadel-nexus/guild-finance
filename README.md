@@ -94,7 +94,7 @@ npm run dev
 ## Environment Variables
 
 ```
-NATS_URL=nats://147.93.43.117:4222
+NATS_URL=nats://<your-nats-host>:4222
 STRIPE_SECRET_KEY=<sk_live_...>
 AWS_ACCESS_KEY_ID=<key>
 AWS_SECRET_ACCESS_KEY=<secret>
