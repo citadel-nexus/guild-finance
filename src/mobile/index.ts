@@ -8,9 +8,9 @@
 // Seat:        BITS-CODEGEN
 // Owner:       Citadel Nexus Inc.
 // Created:     2026-09-25
-// Depends:     src/mobile/rum.ts, GET /realm/finance.json
+// Depends:     src/mobile/rum.ts, src/mobile/product-analytics.ts, GET /realm/finance.json
 // EnumType:    Widget
-// EnumEdges:   DEPENDS_ON src/mobile/rum.ts; CONSUMES GET /realm/finance.json
+// EnumEdges:   DEPENDS_ON src/mobile/rum.ts; DEPENDS_ON src/mobile/product-analytics.ts; CONSUMES GET /realm/finance.json
 // DAG Node:    finance.mobile.client
 // Intent:      Project the public Finance realm feed into a small-screen interface without inventing values.
 // ───────────────────────────────────────────────────────────────
@@ -22,23 +22,31 @@ import {
   reportRealmRendered,
   type FinanceRumConfig,
 } from './rum.js';
+import {
+  initializeMobileAnalytics,
+  type MobileAnalyticsConfig,
+} from './product-analytics.js';
 
 declare global {
   interface Window {
     __FINANCE_RUM_CONFIG__?: FinanceRumConfig;
+    __FINANCE_POSTHOG_CONFIG__?: MobileAnalyticsConfig;
   }
 }
 
 initializeFinanceRum(window.__FINANCE_RUM_CONFIG__);
+const analytics = initializeMobileAnalytics(window.__FINANCE_POSTHOG_CONFIG__);
 void refreshRealm();
 
 async function refreshRealm(): Promise<void> {
   try {
+    if (!(await analytics.realmEnabled())) throw new Error('Realm feed disabled by feature flag');
     const response = await fetch('/realm/finance.json', { headers: { accept: 'application/json' } });
     if (!response.ok) throw new Error(`Realm request returned ${response.status}`);
     const realm = (await response.json()) as FinanceRealm;
     renderRealm(realm);
     reportRealmRendered(realm.activity_level, realm.quests.length);
+    analytics.realmViewed(realm.activity_level, realm.quests.length);
   } catch (error) {
     reportRealmFailure(error);
     renderDegraded();

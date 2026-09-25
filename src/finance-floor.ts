@@ -8,14 +8,23 @@
 // Seat:        BITS-CODEGEN
 // Owner:       Citadel Nexus Inc.
 // Created:     2026-09-25
-// Depends:     src/config.ts
+// Depends:     src/config.ts, src/progression.ts
 // EnumType:    Service
-// EnumEdges:   DEPENDS_ON src/config.ts; PRODUCES src/routes/realm.ts; PRODUCES citadel.finance.activity; PRODUCES citadel.finance.quest; PRODUCES citadel.finance.champion
+// EnumEdges:   DEPENDS_ON src/config.ts; DEPENDS_ON src/progression.ts; PRODUCES src/routes/realm.ts; PRODUCES citadel.finance.activity; PRODUCES citadel.finance.quest; PRODUCES citadel.finance.champion
 // DAG Node:    finance.floor.state
 // Intent:      Maintain a deterministic public floor projection sourced only from observed guild operations.
 // ───────────────────────────────────────────────────────────────
 
 import { CHAMPION, GUILD } from './config.js';
+import {
+  addProgress,
+  EMPTY_PROGRESSION,
+  structureLevel,
+  validateTotals,
+  type ProgressionMetric,
+  type ProgressionTotals,
+  type StructureLevel,
+} from './progression.js';
 
 export type ChampionState = 'blocked' | 'idle' | 'working';
 export type QuestState = 'closed' | 'open';
@@ -31,7 +40,7 @@ export interface FinanceRealm {
   readonly champion: typeof CHAMPION;
   readonly guild: typeof GUILD;
   readonly quests: readonly FloorQuest[];
-  readonly structures: readonly [{ readonly kind: 'hall'; readonly level: 1 }];
+  readonly structures: readonly [{ readonly kind: 'hall'; readonly level: StructureLevel }];
 }
 
 export interface PartyFeed {
@@ -67,7 +76,6 @@ export interface ChampionEvent {
 
 export type Clock = () => Date;
 
-const STRUCTURES = Object.freeze([{ kind: 'hall', level: 1 }] as const);
 const ACTIVITY_TTL_MS = 60_000;
 const MAX_QUESTS = 100;
 
@@ -76,6 +84,7 @@ export class FinanceFloorState {
   private activityObservedAt: Date | null = null;
   private championState: ChampionState = 'idle';
   private readonly quests = new Map<string, FloorQuest>();
+  private progression: ProgressionTotals = { ...EMPTY_PROGRESSION };
 
   public constructor(private readonly clock: Clock = () => new Date()) {}
 
@@ -129,6 +138,15 @@ export class FinanceFloorState {
     };
   }
 
+  public recordProgress(metric: ProgressionMetric, units: number): void {
+    this.progression = addProgress(this.progression, metric, units);
+  }
+
+  public setProgression(totals: ProgressionTotals): void {
+    validateTotals(totals);
+    this.progression = { ...totals };
+  }
+
   public snapshot(): FinanceRealm {
     const activityLevel = this.isActivityFresh() ? this.activityLevel : 0;
     return {
@@ -136,7 +154,7 @@ export class FinanceFloorState {
       champion: CHAMPION,
       activity_level: activityLevel,
       quests: [...this.quests.values()].map((quest) => ({ ...quest })),
-      structures: STRUCTURES,
+      structures: [{ kind: 'hall', level: structureLevel(this.progression) }],
     };
   }
 
@@ -165,7 +183,7 @@ export function quietFinanceRealm(): FinanceRealm {
     champion: CHAMPION,
     activity_level: 0,
     quests: [],
-    structures: STRUCTURES,
+    structures: [{ kind: 'hall', level: 1 }],
   };
 }
 

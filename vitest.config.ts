@@ -26,6 +26,14 @@ export default defineConfig({
       include: [
         'src/finance-floor.ts',
         'src/automation/livingworld-emitter.ts',
+        'src/automation/guild-comms.ts',
+        'src/progression.ts',
+        'src/integrations/contracts.ts',
+        'src/integrations/customer-io.ts',
+        'src/integrations/gitlab.ts',
+        'src/integrations/n8n-webhook.ts',
+        'src/integrations/posthog.ts',
+        'src/integrations/supabase.ts',
         'src/routes/realm.ts',
       ],
       thresholds: {

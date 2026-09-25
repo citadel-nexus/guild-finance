@@ -1,3 +1,20 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File:        .bits/srs/SRS-CN-FINANCE-LIVINGWORLD-001.md
+# Stage:       04_HYPOTHESIZE
+# SRS:         SRS-CN-FINANCE-LIVINGWORLD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-LIVINGWORLD-finance
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-09-25
+# Depends:     .bits/srs_registry.yml, .bits/queue/DISP-LIVINGWORLD-finance.md
+# EnumType:    Doc
+# EnumEdges:   DEPENDS_ON .bits/srs_registry.yml; GATES src/integrations/contracts.ts
+# DAG Node:    finance.srs.living-world
+# Intent:      Extend the registered floor contract to sanitized real-provider activity without exposing financial payloads.
+# ───────────────────────────────────────────────────────────────
+
 # SRS-CN-FINANCE-LIVINGWORLD-001 — Finance Guild · Living-World Floor
 
 **Guild:** finance · **Champion:** Sterling · **Branch:** `bits/livingworld`
@@ -29,6 +46,20 @@ reads — the events this guild emits and the feed the game consumes. The in-gam
 - The three `citadel.finance.*` events publish on real state changes; a subscriber can render the floor from them.
 - Nothing private is exposed — counts/status/method only, cleansed. Fail-soft: a missing source degrades to a
   quiet floor, never a crash.
+
+## Operator-authorized integration extension
+
+Real floor activity may be sourced from PostHog, Customer.io, GitLab,
+Supabase, n8n, and cross-guild NATS when all of the following hold:
+
+- provider credentials are supplied only through environment variables;
+- private payloads are reduced to opaque IDs, counts, coarse status, and
+  timestamps before reaching floor state;
+- external reads are read-only, webhook writes are HMAC-authenticated, and
+  feature flags fail closed;
+- unavailable integrations produce disabled/degraded health and never
+  synthetic activity;
+- cross-guild messages contain status/count data only.
 
 ## Runbook
 Build in THIS repo's TypeScript surface. Self-gate `npm run lint` + `npm test` (CI enforces). PUBLIC-SAFE only — this repo is the community funnel: NO private paths, NO IPs, NO secrets, NO tenant material (that stays on GitLab per .bits/context.md). Real data only. Conventional commit + the CGRF header. Branch `bits/livingworld`; open a PR titled after this SRS with objective, files, gate evidence.

@@ -8,9 +8,9 @@
 // Seat:        BITS-CODEGEN
 // Owner:       Citadel Nexus Inc.
 // Created:     2026-09-25
-// Depends:     src/finance-floor.ts, src/telemetry.ts, nats
+// Depends:     src/finance-floor.ts, src/telemetry.ts, src/progression.ts, nats
 // EnumType:    Service
-// EnumEdges:   CONSUMES src/finance-floor.ts; PRODUCES citadel.finance.activity; PRODUCES citadel.finance.quest; PRODUCES citadel.finance.champion
+// EnumEdges:   CONSUMES src/finance-floor.ts; DEPENDS_ON src/progression.ts; PRODUCES citadel.finance.activity; PRODUCES citadel.finance.quest; PRODUCES citadel.finance.champion
 // DAG Node:    finance.floor.emitter
 // Intent:      Publish cleansed living-world state changes while degrading safely when NATS is unavailable.
 // ───────────────────────────────────────────────────────────────
@@ -27,6 +27,7 @@ import type {
 } from '../finance-floor.js';
 import { logInfo, logWarn } from '../logging.js';
 import { NoopFloorTelemetry, type FloorTelemetry } from '../telemetry.js';
+import type { ProgressionMetric, ProgressionTotals } from '../progression.js';
 
 export interface FloorPublisher {
   close?(): Promise<void>;
@@ -121,6 +122,14 @@ export class FinanceLivingWorld {
 
   public party(): PartyFeed {
     return this.state.party();
+  }
+
+  public recordProgress(metric: ProgressionMetric, units: number): void {
+    this.state.recordProgress(metric, units);
+  }
+
+  public setProgression(totals: ProgressionTotals): void {
+    this.state.setProgression(totals);
   }
 
   private async publishSafely(

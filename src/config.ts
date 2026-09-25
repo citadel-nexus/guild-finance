@@ -10,7 +10,7 @@
 // Created:     2026-09-25
 // Depends:     .bits/srs/SRS-CN-FINANCE-LIVINGWORLD-001.md
 // EnumType:    ConfigDoc
-// EnumEdges:   CONSUMES SRS-CN-FINANCE-LIVINGWORLD-001; GATES citadel.finance.*
+// EnumEdges:   CONSUMES SRS-CN-FINANCE-LIVINGWORLD-001; GATES citadel.finance.*; GATES citadel.guild.comms.finance.broadcast; GATES citadel.guild.comms.*.finance
 // DAG Node:    finance.runtime.config
 // Intent:      Centralize the immutable public Finance Guild contract and prevent subject drift.
 // ───────────────────────────────────────────────────────────────
@@ -28,7 +28,14 @@ export const FLOOR_SUBJECTS = Object.freeze({
   champion: `${NATS_PREFIX}.champion`,
 });
 
+export const GUILD_COMMS_SUBJECTS = Object.freeze({
+  revenueBroadcast: 'citadel.guild.comms.finance.broadcast',
+  commissionClaims: 'citadel.guild.comms.*.finance',
+});
+
 export type FloorSubject = (typeof FLOOR_SUBJECTS)[keyof typeof FLOOR_SUBJECTS];
+export type GuildCommsSubject =
+  (typeof GUILD_COMMS_SUBJECTS)[keyof typeof GUILD_COMMS_SUBJECTS];
 
 export const OBSERVABILITY_TAGS = Object.freeze({
   srs_code: 'SRS-CN-FINANCE-LIVINGWORLD-001',
