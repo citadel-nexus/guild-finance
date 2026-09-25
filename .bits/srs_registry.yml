@@ -36,3 +36,16 @@ SRS-CN-FINANCE-LIVINGWORLD-001:
     citadel.finance.* events + /realm/finance.json feed the game reads. Public-safe only.
     Operator-authorized integration extensions may consume private providers only
     through sanitized, read-only/count-only adapters and signed webhooks.
+
+SRS-CN-FINANCE-AUTOMATION-001:
+  ep: GUILD-AUTOMATION-001
+  status: in_progress
+  phase: "Finance guild — CI visibility, catalog, PostHog, and build/review automation"
+  paths:
+    - service.datadog.yaml
+    - .env.example
+    - .github/workflows/ci.yml
+    - .github/CODEOWNERS
+  notes: >
+    Enable Datadog CI Visibility, improve service catalog entry, document
+    PostHog environment variables, and add CODEOWNERS for PR review automation.
