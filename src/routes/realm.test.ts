@@ -66,7 +66,11 @@ describe('realm routes', () => {
 
   it('serves health and the mobile-first floor shell', async () => {
     const state = new FinanceFloorState();
-    const router = createRealmRouter({ realm: () => state.snapshot(), party: () => state.party() });
+    const router = createRealmRouter(
+      { realm: () => state.snapshot(), party: () => state.party() },
+      () => [{ name: 'posthog', status: 'healthy', checked_at: '2026-09-25T12:00:00.000Z' }],
+      { api_key: '<public-key', api_host: 'https://eu.posthog.com/path' },
+    );
 
     const health = (await request(router, '/health')).json();
     expect(health).toMatchObject({
@@ -75,10 +79,20 @@ describe('realm routes', () => {
       status: 'healthy',
       nats_prefix: 'citadel.finance.*',
     });
-    const html = (await request(router, '/mobile')).body;
+    expect((await request(router, '/health/integrations')).json()).toEqual({
+      integrations: [{ name: 'posthog', status: 'healthy', checked_at: '2026-09-25T12:00:00.000Z' }],
+    });
+    const mobileResponse = await request(router, '/mobile');
+    const html = mobileResponse.body;
     expect(html).toContain('Guildmaster: Sterling');
     expect(html).toContain('Powered by Citadel Nexus Inc.');
+    expect(html).toContain('/mobile/config.js');
     expect(html).toContain('/assets/finance-mobile.js');
+    expect(mobileResponse.headers['content-security-policy']).toContain('https://eu.posthog.com');
+    const browserConfig = (await request(router, '/mobile/config.js')).body;
+    expect(browserConfig).toContain('window.__FINANCE_POSTHOG_CONFIG__');
+    expect(browserConfig).toContain('\\u003cpublic-key');
+    expect(browserConfig).not.toContain('<public-key');
   });
 
   it('returns deterministic errors for unsupported methods and paths', async () => {

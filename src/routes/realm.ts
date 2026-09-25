@@ -8,9 +8,9 @@
 // Seat:        BITS-CODEGEN
 // Owner:       Citadel Nexus Inc.
 // Created:     2026-09-25
-// Depends:     src/finance-floor.ts, src/routes/health.ts, src/mobile/page.ts
+// Depends:     src/finance-floor.ts, src/routes/health.ts, src/mobile/page.ts, src/integrations/contracts.ts
 // EnumType:    Route
-// EnumEdges:   CONSUMES src/finance-floor.ts; PRODUCES GET /realm/finance.json; PRODUCES GET /game/party.json; PRODUCES GET /mobile
+// EnumEdges:   CONSUMES src/finance-floor.ts; PRODUCES GET /realm/finance.json; PRODUCES GET /game/party.json; PRODUCES GET /mobile; PRODUCES GET /health/integrations
 // DAG Node:    finance.http.routes
 // Intent:      Expose fail-soft public realm, party, health, and mobile surfaces with no private fields.
 // ───────────────────────────────────────────────────────────────
@@ -21,8 +21,10 @@ import type { IncomingMessage, ServerResponse } from 'node:http';
 import { CHAMPION, GUILD } from '../config.js';
 import { quietFinanceRealm, type FinanceRealm, type PartyFeed } from '../finance-floor.js';
 import { logWarn } from '../logging.js';
-import { renderMobilePage } from '../mobile/page.js';
+import { renderMobileConfig, renderMobilePage } from '../mobile/page.js';
+import type { MobileAnalyticsConfig } from '../mobile/product-analytics.js';
 import { healthCheck } from './health.js';
+import type { IntegrationHealth } from '../integrations/contracts.js';
 
 export interface RealmSource {
   party(): PartyFeed;
@@ -39,6 +41,8 @@ const PUBLIC_HEADERS = Object.freeze({
 
 export function createRealmRouter(
   source: RealmSource,
+  integrationHealth: () => readonly IntegrationHealth[] = () => [],
+  mobileAnalyticsConfig?: MobileAnalyticsConfig,
 ): (request: IncomingMessage, response: ServerResponse) => Promise<void> {
   return async (request: IncomingMessage, response: ServerResponse): Promise<void> => {
     if (request.method !== 'GET') {
@@ -59,8 +63,16 @@ export function createRealmRouter(
       writeJson(response, 200, healthCheck());
       return;
     }
+    if (path === '/health/integrations') {
+      writeJson(response, 200, { integrations: integrationHealth() });
+      return;
+    }
     if (path === '/' || path === '/mobile') {
-      writeHtml(response, renderMobilePage());
+      writeHtml(response, renderMobilePage(), mobileAnalyticsConfig?.api_host);
+      return;
+    }
+    if (path === '/mobile/config.js') {
+      writeJavascript(response, renderMobileConfig(mobileAnalyticsConfig));
       return;
     }
     if (path === '/assets/finance-mobile.js') {
@@ -109,12 +121,32 @@ function writeJson(
   response.end(JSON.stringify(body));
 }
 
-function writeHtml(response: ServerResponse, body: string): void {
+function writeHtml(response: ServerResponse, body: string, analyticsHost: string | undefined): void {
+  const connectSource = safeConnectSource(analyticsHost);
   response.writeHead(200, {
     ...PUBLIC_HEADERS,
+    'content-security-policy': `default-src 'self'; connect-src 'self'${connectSource === null ? '' : ` ${connectSource}`}; img-src 'self' data:; style-src 'unsafe-inline'; script-src 'self'`,
     'content-type': 'text/html; charset=utf-8',
   });
   response.end(body);
+}
+
+function writeJavascript(response: ServerResponse, body: string): void {
+  response.writeHead(200, {
+    ...PUBLIC_HEADERS,
+    'content-type': 'text/javascript; charset=utf-8',
+  });
+  response.end(body);
+}
+
+function safeConnectSource(value: string | undefined): string | null {
+  if (value === undefined) return null;
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:' || url.protocol === 'http:' ? url.origin : null;
+  } catch {
+    return null;
+  }
 }
 
 async function writeMobileBundle(response: ServerResponse): Promise<void> {

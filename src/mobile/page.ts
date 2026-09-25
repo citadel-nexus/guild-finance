@@ -8,14 +8,15 @@
 // Seat:        BITS-CODEGEN
 // Owner:       Citadel Nexus Inc.
 // Created:     2026-09-25
-// Depends:     src/config.ts, src/mobile/index.ts
+// Depends:     src/config.ts, src/mobile/index.ts, src/mobile/product-analytics.ts
 // EnumType:    Widget
-// EnumEdges:   DEPENDS_ON src/config.ts; CONSUMES GET /realm/finance.json
+// EnumEdges:   DEPENDS_ON src/config.ts; DEPENDS_ON src/mobile/product-analytics.ts; CONSUMES GET /realm/finance.json
 // DAG Node:    finance.mobile.page
 // Intent:      Render an accessible mobile-first shell for the public Finance living-world feed.
 // ───────────────────────────────────────────────────────────────
 
 import { CHAMPION, CHAMPION_COLOR } from '../config.js';
+import type { MobileAnalyticsConfig } from './product-analytics.js';
 
 export function renderMobilePage(): string {
   return `<!doctype html>
@@ -68,7 +69,20 @@ export function renderMobilePage(): string {
     </section>
     <footer>Powered by Citadel Nexus Inc. · <a href="https://citadel-nexus.com/status">System status</a></footer>
   </main>
+  <script src="/mobile/config.js"></script>
   <script type="module" src="/assets/finance-mobile.js"></script>
 </body>
 </html>`;
+}
+
+export function renderMobileConfig(config: MobileAnalyticsConfig | undefined): string {
+  if (config === undefined) return 'window.__FINANCE_POSTHOG_CONFIG__ = undefined;\n';
+  return `window.__FINANCE_POSTHOG_CONFIG__ = ${safeJson(config)};\n`;
+}
+
+function safeJson(value: object): string {
+  return JSON.stringify(value)
+    .replace(/</g, '\\u003c')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029');
 }

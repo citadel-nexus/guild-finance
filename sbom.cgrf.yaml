@@ -1,0 +1,23 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File:        sbom.cgrf.yaml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-FINANCE-LIVINGWORLD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-LIVINGWORLD-finance
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-09-25
+# Depends:     sbom.json, scripts/annotate-sbom.ts
+# EnumType:    ConfigDoc
+# EnumEdges:   DEPENDS_ON sbom.json; DEPENDS_ON scripts/annotate-sbom.ts
+# DAG Node:    finance.sbom.envelope
+# Intent:      Bind the comment-free CycloneDX artifact to its governance and provenance envelope.
+# ───────────────────────────────────────────────────────────────
+
+artifact: sbom.json
+format: CycloneDX
+spec_version: "1.6"
+scope: production_and_development_dependencies
+vulnerability_source: GitHub Advisory Database via npm audit
+audit_date: "2026-09-25"

@@ -34,6 +34,11 @@
 - Build the mobile app surface and its RUM vitals instrumentation.
 - Add focused tests for new behavior and graceful degradation.
 - Add repository-safe Datadog tracing, metrics, and service metadata.
+- Add sanitized, fail-soft adapters that turn real provider events into the
+  existing public floor contract.
+- Accept only HMAC-authenticated n8n webhook events.
+- Publish and consume only the operator-authorized count/status cross-guild
+  communications subjects.
 
 ## Don't
 
@@ -41,7 +46,9 @@
 - Do not modify `docker/`.
 - Do not access private CNWB paths, packages, endpoints, or tenant data.
 - Do not fabricate financial values when sources are absent.
-- Do not publish outside `citadel.finance.*`.
+- Except for `citadel.guild.comms.finance.broadcast` and
+  `citadel.guild.comms.*.finance`, do not publish or subscribe outside
+  `citadel.finance.*`.
 - Do not write without a ready or in-progress dispatch.
 
 ## Pre-flight order

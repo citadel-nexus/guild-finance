@@ -45,7 +45,7 @@
         "CLAUDE.md",
         "src/routes/health.ts"
       ],
-      "lines": 41,
+      "lines": 45,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Define Sterling's public floor capabilities, subject allowlist, health contract, and fail-closed escalation.",
@@ -78,7 +78,7 @@
         "CLAUDE.md",
         ".bits/srs_registry.yml"
       ],
-      "lines": 70,
+      "lines": 77,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Bound the Living-World Floor sprint to its authorized public TypeScript surface.",
@@ -203,7 +203,7 @@
         "AGENTS.md",
         ".bits/context.md"
       ],
-      "lines": 108,
+      "lines": 117,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Define deterministic public-safe operating rules and bootstrap behavior for Finance Guild agents.",
@@ -266,7 +266,7 @@
       "dependencies": [
         "package.json"
       ],
-      "lines": 5776,
+      "lines": 7772,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Lock the verified Node, Datadog, NATS, TypeScript, lint, build, and test dependency graph.",
@@ -370,7 +370,7 @@
         "src/telemetry.ts",
         "nats"
       ],
-      "lines": 139,
+      "lines": 148,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Publish cleansed living-world state changes while degrading safely when NATS is unavailable.",
@@ -404,7 +404,7 @@
       "dependencies": [
         ".bits/srs/SRS-CN-FINANCE-LIVINGWORLD-001.md"
       ],
-      "lines": 37,
+      "lines": 44,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Centralize the immutable public Finance Guild contract and prevent NATS subject drift.",
@@ -469,7 +469,7 @@
       "dependencies": [
         "src/config.ts"
       ],
-      "lines": 182,
+      "lines": 200,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Maintain a deterministic public floor projection sourced only from observed guild operations.",
@@ -570,7 +570,7 @@
         "src/mobile/rum.ts",
         "GET /realm/finance.json"
       ],
-      "lines": 90,
+      "lines": 98,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Project the public Finance realm feed into a small-screen interface without inventing values.",
@@ -604,7 +604,7 @@
         "src/config.ts",
         "src/mobile/index.ts"
       ],
-      "lines": 74,
+      "lines": 88,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Render an accessible mobile-first shell for the public Finance living-world feed.",
@@ -671,7 +671,7 @@
       "dependencies": [
         "src/routes/realm.ts"
       ],
-      "lines": 146,
+      "lines": 160,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Prove public realm and party contracts, champion binding, mobile shell, and quiet fallback.",
@@ -706,7 +706,7 @@
         "src/routes/health.ts",
         "src/mobile/page.ts"
       ],
-      "lines": 134,
+      "lines": 166,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Expose fail-soft public realm, party, health, and mobile surfaces with no private fields.",
@@ -741,7 +741,7 @@
         "src/automation/livingworld-emitter.ts",
         "src/telemetry.ts"
       ],
-      "lines": 72,
+      "lines": 128,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Compose the public service so HTTP remains available when NATS or telemetry is absent.",
@@ -871,7 +871,7 @@
         "package.json",
         "src/**/*.test.ts"
       ],
-      "lines": 39,
+      "lines": 47,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Enforce focused tests and an eighty-percent coverage floor on living-world code.",
@@ -902,7 +902,7 @@
       "dependencies": [
         "package-lock.json"
       ],
-      "lines": 36,
+      "lines": 47,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Declare runnable build, lint, test, tracing, custom metrics, NATS, and browser RUM dependencies.",
@@ -1068,7 +1068,7 @@
       "dependencies": [
         "SRS-CN-FINANCE-LIVINGWORLD-001"
       ],
-      "lines": 1753,
+      "lines": 2937,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Persist substantive file, relationship, and verification provenance for post-merge ingest.",
@@ -1115,6 +1115,681 @@
         "BITS-CODEGEN",
         "SRS-CN-FINANCE-LIVINGWORLD-001",
         "living-world-floor"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/srs/SRS-CN-FINANCE-LIVINGWORLD-001.md",
+      "cket_stage": "04_HYPOTHESIZE",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        ".bits/srs_registry.yml",
+        ".bits/queue/DISP-LIVINGWORLD-finance.md"
+      ],
+      "lines": 68,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Extend the registered floor contract to sanitized real-provider activity without exposing financial payloads.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/srs_registry.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".bits/srs/SRS-CN-FINANCE-LIVINGWORLD-001.md"
+      ],
+      "lines": 38,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Register the public integration, progression, communications, and SBOM paths authorized by the dispatch.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/integration-checklist.md",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        "src/integrations/contracts.ts",
+        "src/automation/guild-comms.ts"
+      ],
+      "lines": 61,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Document configuration, health evidence, and quiet fallback for every Finance dependency.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/progression.md",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        "src/progression.ts",
+        "src/integrations/contracts.ts"
+      ],
+      "lines": 43,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Define auditable structure levels driven only by cumulative verified operation counts.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "sbom.cgrf.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "sbom.json",
+        "scripts/annotate-sbom.ts"
+      ],
+      "lines": 23,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Bind the comment-free CycloneDX artifact to its governance and provenance envelope.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "sbom.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Schema",
+      "functions": [],
+      "dependencies": [
+        "package-lock.json",
+        "scripts/annotate-sbom.ts"
+      ],
+      "lines": 20076,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Inventory exact dependency versions, licenses, dependency edges, and audited known vulnerabilities.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "scripts/annotate-sbom.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Service",
+      "functions": [
+        "isAffectedVitestComponent",
+        "inAffectedRange"
+      ],
+      "dependencies": [
+        "package-lock.json",
+        "sbom.json"
+      ],
+      "lines": 86,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Preserve audited vulnerability findings in the reproducible CycloneDX dependency inventory.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/automation/guild-comms.test.ts",
+      "cket_stage": "08_TEST",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Test",
+      "functions": [],
+      "dependencies": [
+        "src/automation/guild-comms.ts"
+      ],
+      "lines": 128,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Verify count-only message schemas and the canonical Finance broadcast subject.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/automation/guild-comms.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Service",
+      "functions": [
+        "GuildCommsBridge",
+        "createGuildCommsBridge",
+        "sanitizeCommissionClaim"
+      ],
+      "dependencies": [
+        "src/config.ts",
+        "src/integrations/contracts.ts",
+        "nats"
+      ],
+      "lines": 155,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Broadcast count-only revenue health and receive sanitized commission claims from peer guilds.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/integrations/contracts.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Adapter",
+      "functions": [
+        "IntegrationHealthRegistry",
+        "RollingActivityProjector",
+        "FinanceActivitySink",
+        "AllowAllFeatureGate",
+        "NoopActivityAnalytics",
+        "validateActivity"
+      ],
+      "dependencies": [
+        "src/automation/livingworld-emitter.ts",
+        "src/progression.ts"
+      ],
+      "lines": 165,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Enforce one sanitized public contract between private providers and the living-world floor.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/integrations/customer-io.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Adapter",
+      "functions": [
+        "CustomerIoIntegration",
+        "createCustomerIoIntegration"
+      ],
+      "dependencies": [
+        "src/integrations/contracts.ts"
+      ],
+      "lines": 133,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Trigger role-segmented guild notifications without exposing recipient or financial payloads.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/integrations/gitlab.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Adapter",
+      "functions": [
+        "GitLabReadOnlyBridge",
+        "createGitLabBridge",
+        "sanitizeProjection"
+      ],
+      "dependencies": [
+        "src/integrations/contracts.ts"
+      ],
+      "lines": 157,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Read private GitLab state through an allowlisted projection without returning raw payloads.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/integrations/integrations.test.ts",
+      "cket_stage": "08_TEST",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Test",
+      "functions": [],
+      "dependencies": [
+        "src/integrations/contracts.ts",
+        "src/integrations/customer-io.ts",
+        "src/integrations/gitlab.ts",
+        "src/integrations/posthog.ts",
+        "src/integrations/supabase.ts"
+      ],
+      "lines": 291,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Prove provider payload sanitization, feature gates, notifications, health, and fail-soft behavior.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/integrations/n8n-webhook.test.ts",
+      "cket_stage": "08_TEST",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Test",
+      "functions": [],
+      "dependencies": [
+        "src/integrations/n8n-webhook.ts"
+      ],
+      "lines": 99,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Verify signed ingress, replay bounds, schema sanitization, and fail-closed responses.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/integrations/n8n-webhook.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Route",
+      "functions": [
+        "N8nWebhookIntegration",
+        "verifySignature",
+        "sanitizeN8nEvent"
+      ],
+      "dependencies": [
+        "src/integrations/contracts.ts"
+      ],
+      "lines": 158,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Accept replay-bounded HMAC-authenticated workflow events through a sanitized schema.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/integrations/posthog.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Adapter",
+      "functions": [
+        "PostHogIntegration",
+        "DisabledPostHog",
+        "createPostHogIntegration"
+      ],
+      "dependencies": [
+        "src/integrations/contracts.ts",
+        "posthog-node"
+      ],
+      "lines": 105,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Track public-safe floor operations and fail closed on integration feature flags.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/integrations/supabase.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Adapter",
+      "functions": [
+        "SupabaseActivityBridge",
+        "createSupabaseBridge",
+        "sanitizeSupabaseActivity"
+      ],
+      "dependencies": [
+        "src/integrations/contracts.ts",
+        "@supabase/supabase-js"
+      ],
+      "lines": 153,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Convert RLS-protected transaction outbox events into count-only floor activity and quests.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/mobile/product-analytics.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Adapter",
+      "functions": [
+        "initializeMobileAnalytics"
+      ],
+      "dependencies": [
+        "posthog-js",
+        "GET /realm/finance.json"
+      ],
+      "lines": 81,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Measure anonymous mobile and realm engagement with deployment-supplied PostHog configuration.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/progression.test.ts",
+      "cket_stage": "08_TEST",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Test",
+      "functions": [],
+      "dependencies": [
+        "src/progression.ts"
+      ],
+      "lines": 37,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Verify every structure threshold and reject invented or invalid counters.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/progression.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-FINANCE-LIVINGWORLD-001"
+      ],
+      "enum_type": "Service",
+      "functions": [
+        "structureLevel",
+        "addProgress",
+        "validateTotals"
+      ],
+      "dependencies": [
+        ".bits/progression.md"
+      ],
+      "lines": 76,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Derive structure growth only from verified cumulative operation counts.",
+      "objective_id": "DISP-LIVINGWORLD-finance",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-LIVINGWORLD-001",
+        "real-activity-integrations"
       ],
       "tenant_id": null
     },
@@ -1699,6 +2374,476 @@
       "created_by": "BITS-CODEGEN"
     },
     {
+      "type": "B",
+      "source": ".bits/agents/sterling.yml",
+      "target": "citadel.guild.comms.finance.broadcast",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": ".bits/agents/sterling.yml PRODUCES citadel.guild.comms.finance.broadcast under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/agents/sterling.yml",
+      "target": "citadel.guild.comms.*.finance",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": ".bits/agents/sterling.yml CONSUMES citadel.guild.comms.*.finance under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/srs/SRS-CN-FINANCE-LIVINGWORLD-001.md",
+      "target": ".bits/srs_registry.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": ".bits/srs/SRS-CN-FINANCE-LIVINGWORLD-001.md DEPENDS_ON .bits/srs_registry.yml under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/srs/SRS-CN-FINANCE-LIVINGWORLD-001.md",
+      "target": "src/integrations/contracts.ts",
+      "edge_type": "GATES",
+      "weight": 1,
+      "description": ".bits/srs/SRS-CN-FINANCE-LIVINGWORLD-001.md GATES src/integrations/contracts.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/srs_registry.yml",
+      "target": ".bits/srs/SRS-CN-FINANCE-LIVINGWORLD-001.md",
+      "edge_type": "GATES",
+      "weight": 1,
+      "description": ".bits/srs_registry.yml GATES .bits/srs/SRS-CN-FINANCE-LIVINGWORLD-001.md under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/automation/livingworld-emitter.ts",
+      "target": "src/progression.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "src/automation/livingworld-emitter.ts DEPENDS_ON src/progression.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/config.ts",
+      "target": "citadel.guild.comms.finance.broadcast",
+      "edge_type": "GATES",
+      "weight": 1,
+      "description": "src/config.ts GATES citadel.guild.comms.finance.broadcast under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/config.ts",
+      "target": "citadel.guild.comms.*.finance",
+      "edge_type": "GATES",
+      "weight": 1,
+      "description": "src/config.ts GATES citadel.guild.comms.*.finance under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/finance-floor.ts",
+      "target": "src/progression.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "src/finance-floor.ts DEPENDS_ON src/progression.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/mobile/index.ts",
+      "target": "src/mobile/product-analytics.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "src/mobile/index.ts DEPENDS_ON src/mobile/product-analytics.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/mobile/page.ts",
+      "target": "src/mobile/product-analytics.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "src/mobile/page.ts DEPENDS_ON src/mobile/product-analytics.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/routes/realm.ts",
+      "target": "GET /health/integrations",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/routes/realm.ts PRODUCES GET /health/integrations under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/server.ts",
+      "target": "src/integrations/contracts.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "src/server.ts DEPENDS_ON src/integrations/contracts.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/integration-checklist.md",
+      "target": "src/integrations/contracts.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": ".bits/integration-checklist.md CONSUMES src/integrations/contracts.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/integration-checklist.md",
+      "target": "src/automation/guild-comms.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": ".bits/integration-checklist.md CONSUMES src/automation/guild-comms.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/progression.md",
+      "target": "src/progression.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": ".bits/progression.md CONSUMES src/progression.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/progression.md",
+      "target": "src/integrations/contracts.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": ".bits/progression.md DEPENDS_ON src/integrations/contracts.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "sbom.cgrf.yaml",
+      "target": "sbom.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "sbom.cgrf.yaml DEPENDS_ON sbom.json under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "sbom.cgrf.yaml",
+      "target": "scripts/annotate-sbom.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "sbom.cgrf.yaml DEPENDS_ON scripts/annotate-sbom.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "scripts/annotate-sbom.ts",
+      "target": "package-lock.json",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "scripts/annotate-sbom.ts CONSUMES package-lock.json under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "scripts/annotate-sbom.ts",
+      "target": "sbom.json",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "scripts/annotate-sbom.ts PRODUCES sbom.json under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/automation/guild-comms.test.ts",
+      "target": "src/automation/guild-comms.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "src/automation/guild-comms.test.ts VALIDATES src/automation/guild-comms.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/automation/guild-comms.ts",
+      "target": "citadel.guild.comms.finance.broadcast",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/automation/guild-comms.ts PRODUCES citadel.guild.comms.finance.broadcast under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/automation/guild-comms.ts",
+      "target": "citadel.guild.comms.*.finance",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/automation/guild-comms.ts CONSUMES citadel.guild.comms.*.finance under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/contracts.ts",
+      "target": "src/automation/livingworld-emitter.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "src/integrations/contracts.ts DEPENDS_ON src/automation/livingworld-emitter.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/contracts.ts",
+      "target": "src/progression.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "src/integrations/contracts.ts DEPENDS_ON src/progression.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/customer-io.ts",
+      "target": "src/integrations/contracts.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "src/integrations/customer-io.ts DEPENDS_ON src/integrations/contracts.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/customer-io.ts",
+      "target": "Customer.io sanitized notification events",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/integrations/customer-io.ts PRODUCES Customer.io sanitized notification events under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/gitlab.ts",
+      "target": "src/integrations/contracts.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "src/integrations/gitlab.ts DEPENDS_ON src/integrations/contracts.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/gitlab.ts",
+      "target": "sanitized GitLab quest state",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/integrations/gitlab.ts PRODUCES sanitized GitLab quest state under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/integrations.test.ts",
+      "target": "src/integrations/contracts.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "src/integrations/integrations.test.ts VALIDATES src/integrations/contracts.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/integrations.test.ts",
+      "target": "src/integrations/customer-io.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "src/integrations/integrations.test.ts VALIDATES src/integrations/customer-io.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/integrations.test.ts",
+      "target": "src/integrations/gitlab.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "src/integrations/integrations.test.ts VALIDATES src/integrations/gitlab.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/integrations.test.ts",
+      "target": "src/integrations/posthog.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "src/integrations/integrations.test.ts VALIDATES src/integrations/posthog.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/integrations.test.ts",
+      "target": "src/integrations/supabase.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "src/integrations/integrations.test.ts VALIDATES src/integrations/supabase.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/n8n-webhook.test.ts",
+      "target": "src/integrations/n8n-webhook.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "src/integrations/n8n-webhook.test.ts VALIDATES src/integrations/n8n-webhook.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/n8n-webhook.ts",
+      "target": "src/integrations/contracts.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "src/integrations/n8n-webhook.ts DEPENDS_ON src/integrations/contracts.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/n8n-webhook.ts",
+      "target": "POST /webhooks/n8n",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/integrations/n8n-webhook.ts CONSUMES POST /webhooks/n8n under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/posthog.ts",
+      "target": "src/integrations/contracts.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "src/integrations/posthog.ts DEPENDS_ON src/integrations/contracts.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/posthog.ts",
+      "target": "PostHog sanitized guild activity",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/integrations/posthog.ts PRODUCES PostHog sanitized guild activity under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/supabase.ts",
+      "target": "src/integrations/contracts.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "src/integrations/supabase.ts DEPENDS_ON src/integrations/contracts.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/supabase.ts",
+      "target": "sanitized Supabase activity outbox",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/integrations/supabase.ts CONSUMES sanitized Supabase activity outbox under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/mobile/product-analytics.ts",
+      "target": "GET /realm/finance.json",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/mobile/product-analytics.ts CONSUMES GET /realm/finance.json under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/mobile/product-analytics.ts",
+      "target": "PostHog mobile engagement",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/mobile/product-analytics.ts PRODUCES PostHog mobile engagement under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/progression.test.ts",
+      "target": "src/progression.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "src/progression.test.ts VALIDATES src/progression.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/progression.ts",
+      "target": ".bits/progression.md",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/progression.ts CONSUMES .bits/progression.md under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/progression.ts",
+      "target": "src/finance-floor.ts",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/progression.ts PRODUCES src/finance-floor.ts under the authorized Finance living-world dispatch.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
       "type": "C",
       "event_type": "test_pass",
       "file_path": null,
@@ -1736,12 +2881,51 @@
       "timestamp": "2026-09-25T19:17:46Z",
       "commit_sha": null,
       "smoke_result": "4/4"
+    },
+    {
+      "type": "C",
+      "event_type": "test_pass",
+      "file_path": "src/integrations/contracts.ts",
+      "description": "TypeScript, ESLint, build, and 43 focused tests passed with 93.31 percent statement coverage.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": "Unblocked sanitized integration verification.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "timestamp": "2026-09-25T20:03:09Z",
+      "commit_sha": null,
+      "smoke_result": "43/43"
+    },
+    {
+      "type": "C",
+      "event_type": "smoke_run",
+      "file_path": "src/mobile/page.ts",
+      "description": "Headless Chrome loaded the analytics bootstrap and rendered the quiet realm after a successful public feed request with zero console errors.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": "Unblocked mobile integration review.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "timestamp": "2026-09-25T20:03:09Z",
+      "commit_sha": null,
+      "smoke_result": "4/4"
+    },
+    {
+      "type": "C",
+      "event_type": "test_pass",
+      "file_path": "sbom.json",
+      "description": "CycloneDX 1.6 validation passed for 359 licensed components and the audited Vitest vulnerability record.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": "Unblocked software supply-chain review.",
+      "dispatch_id": "DISP-LIVINGWORLD-finance",
+      "timestamp": "2026-09-25T20:03:09Z",
+      "commit_sha": null,
+      "smoke_result": "3/3"
     }
   ],
   "summary": {
-    "type_a_count": 34,
-    "type_b_count": 58,
-    "type_c_count": 3,
+    "type_a_count": 54,
+    "type_b_count": 105,
+    "type_c_count": 6,
     "ioo_compliance": true,
     "dkg_orphans": 0,
     "dispatch_id": "DISP-LIVINGWORLD-finance",

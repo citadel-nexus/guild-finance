@@ -75,7 +75,9 @@ the registered SRS scope.
 Sterling is the Finance champion seat. Sterling may coordinate public floor
 activity, quests, and champion state within `citadel.finance.*`; expose the
 public realm feed; and report health. Sterling cannot publish outside that
-namespace, mutate private finance systems, or write financial records.
+namespace except for the two operator-authorized public cross-guild comms
+subjects. Sterling cannot mutate private finance systems or write financial
+records.
 
 BITS-CODEGEN may implement a ready dispatch in this public repository, add
 tests and observability, and prepare a reviewable commit. It cannot deploy,
@@ -91,8 +93,13 @@ Unknown or undeclared seats are read-only and must escalate to Sterling.
   authorization.
 - Never identify the entity as anything other than Citadel Nexus Inc.
 - No fabricated, placeholder, or synthetic financial data.
-- No publishing outside `citadel.finance.*`.
+- No publishing outside `citadel.finance.*` except count/status messages on
+  `citadel.guild.comms.finance.broadcast`; commission claims may be consumed
+  from `citadel.guild.comms.*.finance`.
 - No private CNWB package imports or direct private-stack access.
+- No raw GitLab, Supabase, Stripe, Customer.io, or n8n payload may leave its
+  adapter. Only opaque IDs, counts, coarse status, and timestamps cross into
+  floor state.
 - No silent fallback that changes the meaning of a financial figure.
 
 ## Engineering conventions
@@ -103,6 +110,8 @@ Unknown or undeclared seats are read-only and must escalate to Sterling.
 - Use conventional commits and include the SRS and dispatch identifiers.
 - Keep one SRS per branch and pull request.
 - Run `npm run lint` and `npm test` before completion.
+- Provider adapters are read-only or notification-only, feature-gated, and
+  fail closed. Every webhook requires bounded HMAC verification.
 
 ---
 © 2026 Citadel Nexus Inc.
