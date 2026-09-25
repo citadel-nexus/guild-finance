@@ -25,6 +25,10 @@ lifecycle: production
 type: web
 languages:
   - typescript
+contacts:
+  - name: Citadel Nexus Inc.
+    type: email
+    contact: support@citadel-nexus.com
 tags:
   - guild:finance
   - champion:sterling
@@ -33,3 +37,7 @@ links:
   - name: Public status
     type: other
     url: https://citadel-nexus.com/status
+  - name: Repository
+    type: repo
+    provider: github
+    url: https://github.com/citadel-nexus/guild-finance
