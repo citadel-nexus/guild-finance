@@ -1,0 +1,19 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File:        tsconfig.cgrf.yaml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-FINANCE-LIVINGWORLD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-LIVINGWORLD-finance
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-09-25
+# Depends:     tsconfig.json
+# EnumType:    ConfigDoc
+# EnumEdges:   VALIDATES tsconfig.json
+# DAG Node:    finance.typescript.config
+# Intent:      Attach governance provenance to the strict TypeScript compiler configuration.
+# ───────────────────────────────────────────────────────────────
+
+artifact: tsconfig.json
+format: json

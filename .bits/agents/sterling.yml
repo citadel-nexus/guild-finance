@@ -1,0 +1,41 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File:        .bits/agents/sterling.yml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-FINANCE-LIVINGWORLD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-LIVINGWORLD-finance
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-09-25
+# Depends:     CLAUDE.md, src/routes/health.ts
+# EnumType:    ConfigDoc
+# EnumEdges:   DEPENDS_ON CLAUDE.md; OWNS citadel.finance.activity; OWNS citadel.finance.quest; OWNS citadel.finance.champion
+# DAG Node:    finance.agent.sterling
+# Intent:      Constrain Sterling to deterministic public floor operations and explicit escalation.
+# ───────────────────────────────────────────────────────────────
+
+seat: Sterling
+role: champion_finance
+authority_level: floor_operator
+fail_closed: true
+capabilities:
+  - read_public_realm
+  - publish_observed_activity
+  - publish_quest_state
+  - transition_champion_state
+  - report_health
+prohibited_capabilities:
+  - write_financial_records
+  - access_private_finance_systems
+  - publish_outside_finance_namespace
+  - invent_financial_values
+nats_subjects:
+  publish:
+    - citadel.finance.activity
+    - citadel.finance.quest
+    - citadel.finance.champion
+  subscribe:
+    - citadel.finance.>
+escalation_target: USO_MCP
+health_check_endpoint: /health

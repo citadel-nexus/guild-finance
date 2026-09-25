@@ -1,0 +1,35 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File:        service.datadog.yaml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-FINANCE-LIVINGWORLD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-LIVINGWORLD-finance
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-09-25
+# Depends:     src/instrumentation.ts, src/telemetry.ts
+# EnumType:    ConfigDoc
+# EnumEdges:   CONSUMES src/instrumentation.ts; CONSUMES src/telemetry.ts; OWNS guild-mcp-finance
+# DAG Node:    finance.datadog.catalog
+# Intent:      Register the Finance Guild service and its public operational surfaces in Datadog.
+# ───────────────────────────────────────────────────────────────
+
+schema-version: v2.2
+dd-service: guild-mcp-finance
+team: finance
+application: citadel-nexus
+description: Public Finance Guild living-world API and mobile floor.
+tier: "2"
+lifecycle: production
+type: web
+languages:
+  - typescript
+tags:
+  - guild:finance
+  - champion:sterling
+  - srs:SRS-CN-FINANCE-LIVINGWORLD-001
+links:
+  - name: Public status
+    type: other
+    url: https://citadel-nexus.com/status
