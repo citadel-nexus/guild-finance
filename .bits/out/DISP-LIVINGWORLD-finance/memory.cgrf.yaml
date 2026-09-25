@@ -1,0 +1,19 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File:        .bits/out/DISP-LIVINGWORLD-finance/memory.cgrf.yaml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-FINANCE-LIVINGWORLD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-LIVINGWORLD-finance
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-09-25
+# Depends:     .bits/out/DISP-LIVINGWORLD-finance/memory.json
+# EnumType:    ConfigDoc
+# EnumEdges:   VALIDATES .bits/out/DISP-LIVINGWORLD-finance/memory.json; DEPENDS_ON SRS-CN-FINANCE-LIVINGWORLD-001
+# DAG Node:    finance.memory.payload
+# Intent:      Attach governance provenance and validation ownership to the dispatch memory payload.
+# ───────────────────────────────────────────────────────────────
+
+artifact: .bits/out/DISP-LIVINGWORLD-finance/memory.json
+format: json

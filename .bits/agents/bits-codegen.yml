@@ -1,0 +1,37 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File:        .bits/agents/bits-codegen.yml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-FINANCE-LIVINGWORLD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-LIVINGWORLD-finance
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-09-25
+# Depends:     CLAUDE.md, .bits/queue/DISP-LIVINGWORLD-finance.md
+# EnumType:    ConfigDoc
+# EnumEdges:   DEPENDS_ON CLAUDE.md; GATES SRS-CN-FINANCE-LIVINGWORLD-001
+# DAG Node:    finance.agent.bits-codegen
+# Intent:      Limit code generation to registered dispatch scope with review-only delivery authority.
+# ───────────────────────────────────────────────────────────────
+
+seat: BITS-CODEGEN
+role: dispatch_implementer
+authority_level: dispatch_scoped_writer
+fail_closed: true
+capabilities:
+  - read_public_repository
+  - implement_ready_dispatch
+  - add_tests_and_observability
+  - prepare_review_metadata
+prohibited_capabilities:
+  - deploy_service
+  - merge_pull_request
+  - push_directly_to_main
+  - broaden_srs_scope
+  - access_private_finance_systems
+nats_subjects:
+  publish: []
+  subscribe: []
+escalation_target: USO_MCP
+health_check_endpoint: /health

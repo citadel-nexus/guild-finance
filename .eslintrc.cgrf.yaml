@@ -1,0 +1,19 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File:        .eslintrc.cgrf.yaml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-FINANCE-LIVINGWORLD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-LIVINGWORLD-finance
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-09-25
+# Depends:     .eslintrc.json
+# EnumType:    ConfigDoc
+# EnumEdges:   VALIDATES .eslintrc.json
+# DAG Node:    finance.eslint.config
+# Intent:      Attach governance provenance to deterministic TypeScript lint rules.
+# ───────────────────────────────────────────────────────────────
+
+artifact: .eslintrc.json
+format: json

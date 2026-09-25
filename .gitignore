@@ -1,0 +1,23 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File:        .gitignore
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-FINANCE-LIVINGWORLD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-LIVINGWORLD-finance
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-09-25
+# Depends:     package.json
+# EnumType:    ConfigDoc
+# EnumEdges:   DEPENDS_ON package.json
+# DAG Node:    finance.repository.ignores
+# Intent:      Keep generated dependencies and verification artifacts out of source control.
+# ───────────────────────────────────────────────────────────────
+
+node_modules/
+dist/
+coverage/
+.playwright-cli/
+.env
+*.log
