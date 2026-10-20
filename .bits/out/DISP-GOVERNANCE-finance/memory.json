@@ -1,0 +1,499 @@
+{
+  "vectors": [
+    {
+      "type": "A",
+      "file_path": ".bits/srs/SRS-CN-FINANCE-GOVERNANCE-001.md",
+      "cket_stage": "04_HYPOTHESIZE",
+      "srs_codes": [
+        "SRS-CN-FINANCE-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".bits/srs_registry.yml"
+      ],
+      "lines": 71,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Bound Finance ownership and provenance work to an operator-authorized staging change.",
+      "objective_id": "DISP-GOVERNANCE-finance",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/queue/DISP-GOVERNANCE-finance.md",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-FINANCE-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".bits/srs/SRS-CN-FINANCE-GOVERNANCE-001.md"
+      ],
+      "lines": 80,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Record operator authority and verifiable tasks for the Finance governance bootstrap.",
+      "objective_id": "DISP-GOVERNANCE-finance",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".github/workflows/provenance.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-FINANCE-GOVERNANCE-001"
+      ],
+      "enum_type": "Workflow",
+      "functions": [],
+      "dependencies": [
+        "package-lock.json",
+        "package.json"
+      ],
+      "lines": 91,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Bind Finance build archives to their reviewed source with keyless signed SLSA provenance.",
+      "objective_id": "DISP-GOVERNANCE-finance",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "GOVERNANCE.md",
+      "cket_stage": "06_PLAN",
+      "srs_codes": [
+        "SRS-CN-FINANCE-GOVERNANCE-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        ".github/CODEOWNERS",
+        ".bits/srs/SRS-CN-FINANCE-GOVERNANCE-001.md"
+      ],
+      "lines": 193,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Make Finance authority, merge safeguards and artifact trust independently reviewable.",
+      "objective_id": "DISP-GOVERNANCE-finance",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/out/DISP-GOVERNANCE-finance/report.md",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-FINANCE-GOVERNANCE-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        ".bits/queue/DISP-GOVERNANCE-finance.md",
+        ".bits/out/DISP-GOVERNANCE-finance/memory.json"
+      ],
+      "lines": 202,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Expose validation limits and remaining admin work for the Finance governance review.",
+      "objective_id": "DISP-GOVERNANCE-finance",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/out/DISP-GOVERNANCE-finance/memory.cgrf.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-FINANCE-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 24,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Preserve traceable file, relationship and validation evidence for the authorized Finance governance change.",
+      "objective_id": "DISP-GOVERNANCE-finance",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/out/DISP-GOVERNANCE-finance/memory.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-FINANCE-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 499,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Preserve traceable file, relationship and validation evidence for the authorized Finance governance change.",
+      "objective_id": "DISP-GOVERNANCE-finance",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/srs_registry.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-FINANCE-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 71,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Register the public integration, progression, communications, and SBOM paths authorized by the dispatch.",
+      "objective_id": "DISP-GOVERNANCE-finance",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".github/CODEOWNERS",
+      "cket_stage": "06_PLAN",
+      "srs_codes": [
+        "SRS-CN-FINANCE-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 16,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Assign the operator-confirmed Finance guildmaster team while preserving SDK reviewers and documenting Sterling automation separately.",
+      "objective_id": "DISP-GOVERNANCE-finance",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-finance",
+        "BITS-CODEGEN",
+        "SRS-CN-FINANCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/srs/SRS-CN-FINANCE-GOVERNANCE-001.md",
+      "target": ".bits/srs_registry.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/srs/SRS-CN-FINANCE-GOVERNANCE-001.md depends_on .bits/srs_registry.yml.",
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/srs/SRS-CN-FINANCE-GOVERNANCE-001.md",
+      "target": ".bits/queue/DISP-GOVERNANCE-finance.md",
+      "edge_type": "GATES",
+      "weight": 1.0,
+      "description": ".bits/srs/SRS-CN-FINANCE-GOVERNANCE-001.md gates .bits/queue/DISP-GOVERNANCE-finance.md.",
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/queue/DISP-GOVERNANCE-finance.md",
+      "target": ".bits/srs/SRS-CN-FINANCE-GOVERNANCE-001.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/queue/DISP-GOVERNANCE-finance.md depends_on .bits/srs/SRS-CN-FINANCE-GOVERNANCE-001.md.",
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/queue/DISP-GOVERNANCE-finance.md",
+      "target": ".github/workflows/provenance.yml",
+      "edge_type": "GATES",
+      "weight": 1.0,
+      "description": ".bits/queue/DISP-GOVERNANCE-finance.md gates .github/workflows/provenance.yml.",
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/queue/DISP-GOVERNANCE-finance.md",
+      "target": "GOVERNANCE.md",
+      "edge_type": "GATES",
+      "weight": 1.0,
+      "description": ".bits/queue/DISP-GOVERNANCE-finance.md gates GOVERNANCE.md.",
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/provenance.yml",
+      "target": "package-lock.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/provenance.yml depends_on package-lock.json.",
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/provenance.yml",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/provenance.yml depends_on package.json.",
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/provenance.yml",
+      "target": "finance-build-archive",
+      "edge_type": "PRODUCES",
+      "weight": 1.0,
+      "description": ".github/workflows/provenance.yml produces finance-build-archive.",
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/provenance.yml",
+      "target": "GOVERNANCE.md",
+      "edge_type": "VERIFIED_BY",
+      "weight": 1.0,
+      "description": ".github/workflows/provenance.yml verified_by GOVERNANCE.md.",
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "GOVERNANCE.md",
+      "target": ".github/CODEOWNERS",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "GOVERNANCE.md depends_on .github/CODEOWNERS.",
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "GOVERNANCE.md",
+      "target": ".bits/srs/SRS-CN-FINANCE-GOVERNANCE-001.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "GOVERNANCE.md depends_on .bits/srs/SRS-CN-FINANCE-GOVERNANCE-001.md.",
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "GOVERNANCE.md",
+      "target": ".github/workflows/provenance.yml",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": "GOVERNANCE.md validates .github/workflows/provenance.yml.",
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-GOVERNANCE-finance/report.md",
+      "target": ".bits/queue/DISP-GOVERNANCE-finance.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-GOVERNANCE-finance/report.md depends_on .bits/queue/DISP-GOVERNANCE-finance.md.",
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-GOVERNANCE-finance/report.md",
+      "target": ".github/workflows/provenance.yml",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-GOVERNANCE-finance/report.md validates .github/workflows/provenance.yml.",
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-GOVERNANCE-finance/report.md",
+      "target": ".bits/out/DISP-GOVERNANCE-finance/memory.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-GOVERNANCE-finance/report.md depends_on .bits/out/DISP-GOVERNANCE-finance/memory.json.",
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-GOVERNANCE-finance/memory.cgrf.yaml",
+      "target": ".bits/out/DISP-GOVERNANCE-finance/memory.json",
+      "edge_type": "GATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-GOVERNANCE-finance/memory.cgrf.yaml gates .bits/out/DISP-GOVERNANCE-finance/memory.json.",
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/srs_registry.yml",
+      "target": ".bits/srs/SRS-CN-FINANCE-LIVINGWORLD-001.md",
+      "edge_type": "GATES",
+      "weight": 1.0,
+      "description": ".bits/srs_registry.yml gates .bits/srs/SRS-CN-FINANCE-LIVINGWORLD-001.md.",
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "C",
+      "event_type": "test_fail",
+      "file_path": ".github/workflows/provenance.yml",
+      "description": "Required lint, test and build commands could not pass: offline dependency install lacked cached packages; local Vitest and TypeScript unavailable and global ESLint incompatible. No dependency or source workaround applied.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "timestamp": "2026-10-20T17:34:29.611665+00:00",
+      "commit_sha": null,
+      "smoke_result": "1/4"
+    },
+    {
+      "type": "C",
+      "event_type": "smoke_run",
+      "file_path": ".github/workflows/provenance.yml",
+      "description": "Static workflow and governance checks passed, including rejection of unconditional signing and code execution in the signing job. Live build and OIDC signing remain unverified.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "timestamp": "2026-10-20T17:34:29.611665+00:00",
+      "commit_sha": null,
+      "smoke_result": "1/4"
+    },
+    {
+      "type": "C",
+      "event_type": "smoke_run",
+      "file_path": ".github/CODEOWNERS",
+      "description": "Applied the operator-confirmed guild-finance owner team, preserved the SDK rule, and documented sterling-finance-guildmaster as the expected automation actor without ruleset bypass. Static policy checks passed; repeated lint and test commands remain blocked by incompatible global ESLint and missing Vitest. Build was not rerun for this documentation and ownership update.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "timestamp": "2026-10-20T17:38:59.870322+00:00",
+      "commit_sha": null,
+      "smoke_result": "1/4"
+    }
+  ],
+  "summary": {
+    "type_a_count": 9,
+    "type_b_count": 17,
+    "type_c_count": 3,
+    "ioo_compliance": true,
+    "dkg_orphans": 0,
+    "dispatch_id": "DISP-GOVERNANCE-finance",
+    "srs_codes": [
+      "SRS-CN-FINANCE-GOVERNANCE-001"
+    ],
+    "seat": "BITS-CODEGEN"
+  }
+}

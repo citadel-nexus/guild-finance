@@ -1,0 +1,24 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File:        .bits/out/DISP-GOVERNANCE-finance/memory.cgrf.yaml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-FINANCE-GOVERNANCE-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-GOVERNANCE-finance
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-10-20
+# Depends:     none
+# EnumType:    ConfigDoc
+# EnumEdges:   GATES .bits/out/DISP-GOVERNANCE-finance/memory.json
+# DAG Node:    none
+# Intent:      Preserve traceable file, relationship and validation evidence for the authorized Finance governance change.
+# ───────────────────────────────────────────────────────────────
+
+file: .bits/out/DISP-GOVERNANCE-finance/memory.json
+stage: 11_COMMIT
+srs: SRS-CN-FINANCE-GOVERNANCE-001
+dispatch: DISP-GOVERNANCE-finance
+owner: Citadel Nexus Inc.
+caps: pending
+ck: pending

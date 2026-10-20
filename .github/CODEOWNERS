@@ -1,5 +1,16 @@
+# Guildmaster: Sterling (GitLab user sterling), Finance Guild.
+# Operator-confirmed guildmaster owner: @citadel-nexus/guild-finance.
+# Sterling automation: sterling-finance-guildmaster (GitHub App; not a code owner).
+# See GOVERNANCE.md for guildmaster approval, escalation and admin prerequisites.
+# Baseline: SRS-CN-FINANCE-AUTOMATION-001; governance: SRS-CN-FINANCE-GOVERNANCE-001.
 # Guild code owners — all PRs require review from the Finance Guild team
-* @citadel-nexus/finance-guild
+* @citadel-nexus/guild-finance
 
 # Guild SDK public interface
 src/index.ts @citadel-nexus/sdk-core
+
+# Governance and signing changes require Finance Guild review.
+/GOVERNANCE.md @citadel-nexus/guild-finance
+/.github/ @citadel-nexus/guild-finance
+/.bits/srs/SRS-CN-FINANCE-GOVERNANCE-001.md @citadel-nexus/guild-finance
+/.bits/queue/DISP-GOVERNANCE-finance.md @citadel-nexus/guild-finance
