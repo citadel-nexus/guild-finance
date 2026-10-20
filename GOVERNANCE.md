@@ -191,3 +191,17 @@ commit protections. Previously issued attestations remain historical evidence;
 consumers must continue to enforce their approved commit/workflow policy.
 
 Owner: Citadel Nexus Inc.
+
+## Reviewed scaffold PR closeout
+
+The Finance scaffold closeout workflow is a manual maintenance tool. Its frozen
+PR #1–#6 dispositions and exact reviewed heads are documented in
+`.bits/out/DISP-GOVERNANCE-finance/closeout.md`. It previews by default; selecting
+`close_reviewed=true` closes only unchanged reviewed candidates on the default
+branch. PR-triggered policy tests never close PRs. The workflow does not merge code,
+post comments, delete branches, or select work by age. Changed candidates require
+a fresh review. Do not require its path-filtered check on every PR.
+
+Sterling's guildmaster team reviews changes to this maintenance policy. The GitHub
+Actions token executes this workflow; Sterling's app remains the separately
+identified guildmaster automation actor. Neither identity gains a ruleset bypass.

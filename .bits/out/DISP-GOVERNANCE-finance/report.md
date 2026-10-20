@@ -17,6 +17,11 @@
 
 # §15 Report Template
 
+Historical bootstrap evidence. The post-merge review and current check results
+are in `closeout.md` beside this file. GitHub subsequently passed the build and
+signing jobs; the earlier local dependency limitations and memory counts below describe the
+bootstrap snapshot. Current cumulative memory counts are in memory.json.
+
 ## §1 SUMMARY
 
 - Status: PARTIAL
