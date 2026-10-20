@@ -49,3 +49,23 @@ SRS-CN-FINANCE-AUTOMATION-001:
   notes: >
     Enable Datadog CI Visibility, improve service catalog entry, document
     PostHog environment variables, and add CODEOWNERS for PR review automation.
+
+SRS-CN-FINANCE-GOVERNANCE-001:
+  ep: GUILD-GOVERNANCE-001
+  status: in_progress
+  phase: "Finance Guild ownership governance and signed build provenance"
+  dispatch: DISP-GOVERNANCE-finance
+  cks_gate: B+/75
+  caps_minimum: pending
+  paths:
+    - .github/CODEOWNERS
+    - GOVERNANCE.md
+    - .github/workflows/provenance.yml
+    - .bits/srs_registry.yml
+    - .bits/srs/SRS-CN-FINANCE-GOVERNANCE-001.md
+    - .bits/queue/DISP-GOVERNANCE-finance.md
+    - .bits/out/DISP-GOVERNANCE-finance/
+  notes: >
+    Authenticated operator governance bootstrap directive through Bits AI on
+    2026-10-20. Staging only. Coordinate the existing CODEOWNERS baseline with
+    SRS-CN-FINANCE-AUTOMATION-001. No GitHub settings or production changes.
