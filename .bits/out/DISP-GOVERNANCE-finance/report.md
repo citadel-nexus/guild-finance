@@ -37,8 +37,9 @@
   .bits/srs/SRS-CN-FINANCE-GOVERNANCE-001.md, .bits/queue/DISP-GOVERNANCE-finance.md.
   CKET: 04_HYPOTHESIZE and 11_COMMIT (logical stages, existing repo paths).
 - Task B — ownership and provenance: PARTIAL. Governance and workflow implemented;
-  Sterling's individual GitHub account is unconfirmed. Existing team ownership
-  retained. Runtime build and OIDC signing are unverified.
+  Operator-confirmed guildmaster team assigned; SDK rule preserved. Sterling's
+  app documented as automation identity and expected ruleset actor, with no bypass.
+  Runtime build and OIDC signing are unverified.
   Verify: static policy command below; `npm run build`; live verification in
   GOVERNANCE.md. Files: .github/CODEOWNERS, GOVERNANCE.md,
   .github/workflows/provenance.yml. CKET: 06_PLAN and 11_COMMIT.
@@ -65,10 +66,15 @@ not establish application regressions or passing coverage. No tests were added
 because no application module changed. Python/pytest and mypy are not applicable
 to this TypeScript repository. No artifact or signing success is claimed.
 
+After the operator identity update, lint and tests were rerun and produced the
+same failures. Build was not rerun for this ownership/documentation-only change;
+its earlier dependency failure remains unresolved.
+
 Static validation PASS: YAML parsing; unchanged prior registry content; registered
 SRS/dispatch; trusted-ref signing gate; build/sign permissions separation; same-run
 artifact wiring; full action SHA pins; no code execution in signing job; packaging
-shell syntax; preserved owner patterns; documented GitHub CLI flags. Negative
+shell syntax; confirmed Finance owner and preserved SDK rule; documented GitHub
+CLI flags. Operator identity confirmation is recorded in the dispatch. Negative
 controls reject unconditional signing and repository code execution in the signing
 job. This is not GitHub's workflow validator; actionlint is not installed and action
 revisions were not resolved remotely. Verify these checks with:
@@ -120,7 +126,15 @@ for mutate in [lambda w:w['jobs']['attest'].update({'if':'always()'}),lambda w:w
 # Parse packaging shell without executing a build or creating a fake archive.
 subprocess.run(['bash','-n'],input=workflow['jobs']['build']['steps'][-2]['run'],text=True,check=True)
 owners=Path('.github/CODEOWNERS').read_text()
-assert '* @citadel-nexus/finance-guild' in owners
+rules=[l.split() for l in owners.splitlines() if l.strip() and not l.startswith('#')]
+assert rules[0]==['*','@citadel-nexus/guild-finance']
+assert all(r[1:]==['@citadel-nexus/guild-finance'] for r in rules if r[0]!='src/index.ts')
+assert not any('sterling-finance-guildmaster' in token for r in rules for token in r)
+assert '@citadel-nexus/finance-guild' not in owners
+governance=Path('GOVERNANCE.md').read_text()
+assert 'GitHub App `sterling-finance-guildmaster`' in governance
+assert 'GitHub App **`sterling-finance-guildmaster`**' in governance
+assert 'grants no ruleset bypass' in governance
 assert 'src/index.ts @citadel-nexus/sdk-core' in owners
 assert not any('@sterling' in l for l in owners.splitlines() if not l.startswith('#'))
 help_text=subprocess.check_output(['gh','attestation','verify','--help'],text=True)
@@ -138,7 +152,7 @@ label this PR verified:tests-pass until the required checks succeed.
 
 ## §4 MEMORY INGEST
 
-- Type A: 9 file vectors; Type B: 17 relationship vectors; Type C: 2 recorded events.
+- Type A: 9 file vectors; Type B: 17 relationship vectors; Type C: 3 recorded events.
 - IOO compliance: true; DKG orphans: 0 (validated locally).
 - Payload: .bits/out/DISP-GOVERNANCE-finance/memory.json; JSON envelope: memory.cgrf.yaml.
 - No direct memory service write; CK/CAPS stay pending.
@@ -172,11 +186,12 @@ this change does not relocate existing files into physical stage directories.
 ## §7 NEXT ACTIONS
 
 - Blockers: install locked dependencies and obtain passing lint/test/build;
-  confirm Sterling's GitHub account; validate first live signed archive.
+  validate first live signed archive.
 - Admin: confirm owners' access, activate default-branch ruleset and required
   checks, require signed commits, allow pinned actions/OIDC/attestations, validate
   positive and negative artifact-verification cases. Additional Sterling approval
-  is manual unless a separate approval-policy check is installed.
+  is manual unless a separate approval-policy check is installed. The expected
+  Sterling automation actor is sterling-finance-guildmaster; no bypass is granted.
 - Handoffs requested: none; PR creation uses the coding-agent UI.
 - Suggested next dispatch: none assigned; finish this dispatch's blocked checks.
 - Bugs filed: none. No issue target was provided and repository CLI is read-only.
@@ -184,4 +199,4 @@ this change does not relocate existing files into physical stage directories.
   dispatch:disp-governance-finance, verified:static-only, verified:manual-review.
 
 Rollback: reviewed revert; admin must first remove the new workflow's required
-check if enabled. Existing team ownership and registry entries must be preserved.
+check if enabled. The confirmed guildmaster team, SDK ownership and prior registry entries must be preserved.

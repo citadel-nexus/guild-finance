@@ -12,7 +12,7 @@
       "dependencies": [
         ".bits/srs_registry.yml"
       ],
-      "lines": 68,
+      "lines": 71,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Bound Finance ownership and provenance work to an operator-authorized staging change.",
@@ -43,7 +43,7 @@
       "dependencies": [
         ".bits/srs/SRS-CN-FINANCE-GOVERNANCE-001.md"
       ],
-      "lines": 68,
+      "lines": 80,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Record operator authority and verifiable tasks for the Finance governance bootstrap.",
@@ -107,7 +107,7 @@
         ".github/CODEOWNERS",
         ".bits/srs/SRS-CN-FINANCE-GOVERNANCE-001.md"
       ],
-      "lines": 180,
+      "lines": 193,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Make Finance authority, merge safeguards and artifact trust independently reviewable.",
@@ -139,7 +139,7 @@
         ".bits/queue/DISP-GOVERNANCE-finance.md",
         ".bits/out/DISP-GOVERNANCE-finance/memory.json"
       ],
-      "lines": 187,
+      "lines": 202,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Expose validation limits and remaining admin work for the Finance governance review.",
@@ -197,7 +197,7 @@
       "enum_type": "ConfigDoc",
       "functions": [],
       "dependencies": [],
-      "lines": 486,
+      "lines": 499,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Preserve traceable file, relationship and validation evidence for the authorized Finance governance change.",
@@ -258,7 +258,7 @@
       "lines": 16,
       "caps_grade": "pending",
       "ck_stamp": "pending",
-      "intent_statement": "Preserve existing Finance and SDK reviewers while documenting Sterling ownership and governance review requirements.",
+      "intent_statement": "Assign the operator-confirmed Finance guildmaster team while preserving SDK reviewers and documenting Sterling automation separately.",
       "objective_id": "DISP-GOVERNANCE-finance",
       "outcome": "partial",
       "supersedes": false,
@@ -469,12 +469,25 @@
       "timestamp": "2026-10-20T17:34:29.611665+00:00",
       "commit_sha": null,
       "smoke_result": "1/4"
+    },
+    {
+      "type": "C",
+      "event_type": "smoke_run",
+      "file_path": ".github/CODEOWNERS",
+      "description": "Applied the operator-confirmed guild-finance owner team, preserved the SDK rule, and documented sterling-finance-guildmaster as the expected automation actor without ruleset bypass. Static policy checks passed; repeated lint and test commands remain blocked by incompatible global ESLint and missing Vitest. Build was not rerun for this documentation and ownership update.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-GOVERNANCE-finance",
+      "timestamp": "2026-10-20T17:38:59.870322+00:00",
+      "commit_sha": null,
+      "smoke_result": "1/4"
     }
   ],
   "summary": {
     "type_a_count": 9,
     "type_b_count": 17,
-    "type_c_count": 2,
+    "type_c_count": 3,
     "ioo_compliance": true,
     "dkg_orphans": 0,
     "dispatch_id": "DISP-GOVERNANCE-finance",

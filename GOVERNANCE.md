@@ -21,25 +21,28 @@
 
 The Finance Guild owns billing, spend, budgets, cost guards and the Finance Floor.
 Its guildmaster is **Sterling** (GitLab user `sterling`). The Datadog team handle
-is `guild-finance`. These identifiers describe different systems; neither implies
-a GitHub username or team slug.
+is `guild-finance`. The operator confirmed the following GitHub identities through
+that Datadog team's links:
+
+- Guildmaster code-owner team: `@citadel-nexus/guild-finance`
+  (https://github.com/orgs/citadel-nexus/teams/guild-finance).
+- Sterling's automation identity: GitHub App `sterling-finance-guildmaster`
+  (https://github.com/apps/sterling-finance-guildmaster).
 
 Sterling is accountable for scope, priorities, financial-control requirements,
 and technical acceptance. Contributors implement an approved SRS and dispatch.
 This public repository contains public-safe code and documentation; production
 financial records, credentials and private-stack operations are outside its remit.
 
-The existing GitHub review owner is `@citadel-nexus/finance-guild`; the SDK public
-interface keeps `@citadel-nexus/sdk-core` ownership. These existing CODEOWNERS
-entries come from SRS-CN-FINANCE-AUTOMATION-001. This SRS extends that same file,
+The guildmaster review owner is `@citadel-nexus/guild-finance`; the SDK public
+interface keeps `@citadel-nexus/sdk-core` ownership. This SRS updates the Finance
+team in the single CODEOWNERS file established by SRS-CN-FINANCE-AUTOMATION-001,
 without changing that SRS or introducing another ownership source.
 
-**Admin prerequisite:** confirm Sterling's GitHub identity with the operator,
-verify both existing teams are visible and have explicit write access, and add
-Sterling's confirmed GitHub account to the relevant CODEOWNERS rules. Do not
-assign GitHub `@sterling` based solely on the GitLab username. Until that mapping
-is confirmed, CODEOWNERS names Sterling's role in comments and requests reviews
-from the existing teams; it does not request Sterling individually.
+GitHub Apps cannot be CODEOWNERS. Sterling's app records automation activity;
+the confirmed team supplies code-owner review through eligible human members.
+**Admin prerequisite:** ensure both code-owner teams are visible and have explicit
+write access to this repository. Identity confirmation is complete.
 
 ## Decisions, approvals and escalation
 
@@ -56,9 +59,11 @@ from the existing teams; it does not request Sterling individually.
 - Emergency work uses an expedited reviewed PR and a documented rollback plan.
   This charter does not authorize disabling checks or bypassing branch protection.
 
-CODEOWNERS with several owners permits approval by any one matching owner; it
-cannot require both Sterling and a team. Sterling's additional approval is a
-human merge gate unless an admin installs a dedicated approval-policy check.
+CODEOWNERS permits approval by an eligible member of the matching team; it cannot
+require approval from Sterling's GitHub App. Record Sterling's decision or delegated
+human approval on the PR. This additional governance gate is manual unless an admin
+installs a dedicated approval-policy check; app activity does not replace the
+required independent code-owner approval.
 
 ## Default-branch protection: admin enablement
 
@@ -84,6 +89,14 @@ branch ruleset targeting the default branch** (currently `main`):
 5. Confirm GitHub recognizes CODEOWNERS and its owners, then use a trial PR to
    verify review requests, stale-approval dismissal and blocked merge behavior.
    Check unsigned commits are rejected on the protected branch.
+
+The expected Sterling automation actor in ruleset actor selection and audit records
+is GitHub App **`sterling-finance-guildmaster`**. When an admin needs
+to identify this actor in GitHub's settings, select its repository installation; do not
+substitute the code-owner team or an inferred user account. This identity record
+grants no ruleset bypass: the app must follow the same pull-request, signed-commit
+and required-check rules. Required build checks continue to use **GitHub Actions**
+as their source app, not the Sterling app.
 
 Do **not** require `Finance provenance attestation` as a PR check: PR builds
 intentionally do not sign. That job runs after a trusted default-branch build.

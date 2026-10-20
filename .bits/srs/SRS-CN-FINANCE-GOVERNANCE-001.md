@@ -40,17 +40,20 @@ covers provenance.yml. Existing CI and release workflows are outside this change
 ## Coordination
 
 SRS-CN-FINANCE-AUTOMATION-001 already owns the existing CODEOWNERS baseline.
-Extend that single file, retain Finance team ownership and SDK-specific ownership,
-and document Sterling's guildmaster role. Do not create a competing CODEOWNERS.
-A GitLab username or Datadog team handle does not establish a GitHub identity.
-Until confirmed, individual GitHub ownership is an explicit admin prerequisite.
+Extend that single file using the operator-confirmed `@citadel-nexus/guild-finance`
+guildmaster team and retain SDK-specific ownership. Do not create a competing
+CODEOWNERS. The operator confirmed GitHub App `sterling-finance-guildmaster` as
+Sterling's automation identity through the Datadog `guild-finance` team links.
+Record that app as the expected ruleset automation actor, without granting bypass.
+GitHub Apps cannot be code owners; the team provides code-owner review.
 
 ## Acceptance
 
 1. Document billing, spend, budgets, cost guards and the Finance Floor remit;
    guildmaster authority, approvals and escalation to the guildmasters group.
-2. Preserve existing review owners and name Sterling's role in CODEOWNERS.
-   Document the required GitHub identity/access mapping if unavailable.
+2. Assign Finance ownership to `@citadel-nexus/guild-finance` while preserving
+   the SDK rule. Document `sterling-finance-guildmaster` as Sterling's automation
+   identity and expected ruleset actor; keep the app out of CODEOWNERS rules.
 3. Document default-branch code-owner approval, signed commits, required checks,
    bypass controls and admin enablement. Do not change live GitHub settings.
 4. Build the existing server/mobile distribution and upload an immutable archive.

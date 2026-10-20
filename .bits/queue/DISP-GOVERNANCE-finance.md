@@ -24,6 +24,8 @@
 - guild: Finance Guild
 - guildmaster: Sterling (GitLab `sterling`)
 - datadog_team: guild-finance
+- github_codeowner_team: "@citadel-nexus/guild-finance"
+- github_automation_app: sterling-finance-guildmaster
 - branch: bits/SRS-CN-FINANCE-GOVERNANCE-001-provenance
 - authorization_source: Authenticated operator Dmitry Richard (mr.nobody@citadel-nexus.com), Bits AI session directive, 2026-10-20.
 
@@ -40,6 +42,16 @@ CODEOWNERS with AUTOMATION; this dispatch authorizes provenance.yml despite the
 LIVINGWORLD dispatch's workflow restriction. No production, deploy, push to main,
 GitHub settings changes, secrets or financial data. npm run lint and npm test
 must pass. The coding-agent UI controls eventual PR creation.
+
+## Operator identity confirmation
+
+In the same Bits AI session, the authenticated operator confirmed the Datadog
+`guild-finance` team's GitHub links: code-owner team `@citadel-nexus/guild-finance`
+and GitHub App `sterling-finance-guildmaster`. The directive assigns the team as
+guildmaster owner, preserves the SDK rule, and records the app as Sterling's
+automation identity and expected ruleset actor. GitHub Apps cannot be code owners.
+This resolves the identity follow-up under the same SRS and dispatch; it does not
+authorize any GitHub settings change or ruleset bypass.
 
 ## Task table
 
