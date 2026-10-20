@@ -35,7 +35,8 @@ The authenticated operator explicitly authorized creating these governance
 records on 2026-10-20 through Bits AI, invoking the CLAUDE.md bootstrap exception.
 The existing LIVINGWORLD and AUTOMATION registry entries remain unchanged.
 The LIVINGWORLD workflow restriction belongs to that dispatch; this SRS explicitly
-covers provenance.yml. Existing CI and release workflows are outside this change.
+covers provenance.yml. The operator follow-up below additionally covers the
+existing CI login repair; the release workflow remains outside this change.
 
 ## Coordination
 
@@ -69,3 +70,14 @@ GitHub Apps cannot be code owners; the team provides code-owner review.
 Staging only. No deployment, publication of packages/containers, production access,
 financial-data changes, secrets, GitHub settings writes or pushes to main.
 One SRS, branch and PR. No new application modules; SAKE module stubs do not apply.
+
+## Operator-authorized closeout follow-up
+
+After PR #23 merged, the operator requested review of the repository and other
+PRs/MRs, closure of stale work, and consolidation of missing pieces into a new PR.
+This extends the same SRS to .github/workflows/ci.yml (existing GHCR login repair),
+.github/workflows/close-scaffold-prs.yml (manual, reviewed-head-only cleanup), and
+closeout evidence/tests in .bits/out/DISP-GOVERNANCE-finance/. No scaffold runtime
+code is imported. No new deployment destination, package release or direct GitHub
+settings change is authorized. The cleanup workflow must default to dry-run,
+reject changed PR heads/identity, and leave all unreviewed PRs and branches alone.

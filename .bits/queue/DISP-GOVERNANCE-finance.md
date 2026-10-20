@@ -78,3 +78,21 @@ The package builds server TypeScript and an esbuild mobile bundle into dist/.
 Existing CI and tag-release workflows remain independently managed; attestations
 in this SRS cover only the new workflow's archived build outputs. No prior memory
 was retrieved and no private Memory MCP or VCC database write was performed.
+
+## Post-merge operator follow-up
+
+Authorization source: the same authenticated operator's Bits AI instruction to
+"check the repo and other mr and prs" and "close our the stale ones and bring the
+missing parts into a new mr", after PR #23 merged. Continue this in_progress
+SRS/dispatch on bits/SRS-CN-FINANCE-GOVERNANCE-001-closeout, based on the current
+main merge 2f630f6beda81752c56711d0a33043b2d3e13726.
+
+Phase D: compare all six open scaffold PRs with current main, record dispositions,
+repair the observed existing CI login expression bug, and provide a manual cleanup
+workflow restricted to the reviewed heads. GitHub API writes remain unavailable
+in this session; no PR closure is claimed. The operator can run the merged workflow
+with close_reviewed=true after reviewing its default dry-run summary.
+
+Gate: Node closeout policy tests and YAML/credential validation must pass. Existing
+application lint/test/build evidence comes from successful PR #23 and main builds;
+record local dependency limitations and do not claim the login repair has run live.

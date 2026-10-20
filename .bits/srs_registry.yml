@@ -61,6 +61,8 @@ SRS-CN-FINANCE-GOVERNANCE-001:
     - .github/CODEOWNERS
     - GOVERNANCE.md
     - .github/workflows/provenance.yml
+    - .github/workflows/ci.yml
+    - .github/workflows/close-scaffold-prs.yml
     - .bits/srs_registry.yml
     - .bits/srs/SRS-CN-FINANCE-GOVERNANCE-001.md
     - .bits/queue/DISP-GOVERNANCE-finance.md
